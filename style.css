@@ -1,0 +1,244 @@
+@font-face {
+  font-family: "Metro";
+  src: url("./fonts/Metropolis-SemiBold.otf");
+}
+@font-face {
+  font-family: "MetroBold";
+  src: url("./fonts/Metropolis-ExtraBold.otf");
+}
+* {
+  font-family: Metro;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #202022;
+  opacity: 1;
+  background-size: cover;
+  background-position: top;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* navbar */
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+@media (max-width: 947px) {
+  .max-width {
+    padding: 0 30px;
+  }
+}
+
+.my-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+  background: rgba(12, 12, 12, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-transform: uppercase;
+}
+.my-navbar .sticky {
+  padding: 15px 0;
+  background: rgba(12, 12, 12, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.my-navbar .sticky .logo a span {
+  color: #fff;
+}
+.my-navbar .sticky .menu li a:hover {
+  background-image: url(./media/gold.png);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.my-navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my-navbar .logo a {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.my-navbar .logo a span {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+.my-navbar img {
+  height: 36px;
+}
+.my-navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+.my-navbar .menu li a {
+  display: block;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.my-navbar .menu li a:hover {
+  background-image: url(./media/gold.png);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+@media (max-width: 1100px) {
+  .my-navbar .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -101%;
+    top: 0;
+    background: rgba(12, 12, 12, 0.712);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+  }
+  .my-navbar .menu li {
+    display: block;
+  }
+  .my-navbar .menu li a {
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 25px;
+  }
+  .my-navbar img {
+    height: 24px;
+  }
+  .my-navbar .sticky {
+    padding: 15px 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .my-navbar .menu.active {
+    left: 0;
+  }
+}
+
+/* menu btn styling */
+.menu-btn {
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+@media (max-width: 1100px) {
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+}
+
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background-image: url(./media/gold.png);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn .show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-up-btn:hover {
+  filter: brightness(90%);
+}
+
+#main-section {
+  height: 100vh;
+  width: 100%;
+  background-image: url(./media/main-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+#main-section .div-con {
+  padding-top: 35vh;
+  padding-left: 5vw;
+  width: 45vw;
+  color: #c7caca;
+  font-size: 78px;
+  text-transform: uppercase;
+}
+#main-section .div-con div {
+  padding-top: 10px;
+}
+#main-section .div-con div .gold {
+  font-family: MetroBold;
+  background-image: url(https://i.pinimg.com/564x/b9/66/cf/b966cf9fadc38605e4b23d5bb5f9c916.jpg);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+#main-section .div-con div .diamond {
+  font-family: MetroBold;
+  background-image: url(https://i.pinimg.com/564x/0a/52/17/0a5217b5be9d4dc704f28991c626a48f.jpg);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.btn {
+  margin: 16px;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 16px;
+  border: 4px solid transparent;
+  border-image: url(./media/gold.png) 30;
+  transition: 350ms;
+  font-family: MetroBold;
+}
+.btn:hover {
+  background-color: black;
+  transition: 350ms;
+}
+
+/*# sourceMappingURL=style.css.map */

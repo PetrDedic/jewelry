@@ -1,0 +1,284 @@
+$brand-blue: #37b9f1;
+$brand-purple: #8f44fd;
+$brand-grey: #c7caca;
+$brand-bg: #202022;
+$brand-gold-one: #cd9b55;
+$brand-gold-two: #ffdca5;
+
+@font-face {
+  font-family: "Metro";
+  src: url("./fonts/Metropolis-SemiBold.otf");
+}
+
+@font-face {
+  font-family: "MetroBold";
+  src: url("./fonts/Metropolis-ExtraBold.otf");
+}
+
+* {
+  font-family: Metro;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: $brand-bg;
+  opacity: 1;
+  background-size: cover;
+  background-position: top;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* navbar */
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+  @media (max-width: 947px) {
+    padding: 0 30px;
+  }
+}
+
+.my-navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+  background: rgba(12, 12, 12, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-transform: uppercase;
+
+  .sticky {
+    padding: 15px 0;
+    background: rgba(12, 12, 12, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    .logo {
+      a {
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    .menu {
+      li {
+        a {
+          &:hover {
+            background-image: url(./media/gold.png);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    a {
+      color: #fff;
+      font-size: 35px;
+      font-weight: 600;
+
+      span {
+        background: -webkit-linear-gradient(#eee, #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  img {
+    height: 36px;
+  }
+
+  .menu {
+    li {
+      list-style: none;
+      display: inline-block;
+
+      a {
+        display: block;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 500;
+        margin-left: 25px;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        &:hover {
+          background-image: url(./media/gold.png);
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  @media (max-width: 1100px) {
+    .menu {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      left: -101%;
+      top: 0;
+      background: rgba(12, 12, 12, 0.712);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+      padding-top: 80px;
+      transition: all 0.3s ease;
+
+      li {
+        display: block;
+
+        a {
+          display: inline-block;
+          margin: 20px 0;
+          font-size: 25px;
+        }
+      }
+    }
+
+    img {
+      height: 24px;
+    }
+
+    .sticky {
+      padding: 15px 0;
+      background: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .menu.active {
+      left: 0;
+    }
+  }
+}
+
+/* menu btn styling */
+.menu-btn {
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 1100px) {
+    display: block;
+    z-index: 999;
+  }
+}
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background-image: url(./media/gold.png);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  .show {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+#main-section {
+  height: 100vh;
+  width: 100%;
+
+  background-image: url(./media/main-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+
+  .div-con {
+    padding-top: 35vh;
+    padding-left: 5vw;
+    width: 45vw;
+    color: $brand-grey;
+    font-size: 78px;
+    text-transform: uppercase;
+
+    div {
+      padding-top: 10px;
+
+      .gold {
+        font-family: MetroBold;
+
+        background-image: url(https://i.pinimg.com/564x/b9/66/cf/b966cf9fadc38605e4b23d5bb5f9c916.jpg);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .diamond {
+        font-family: MetroBold;
+
+        background-image: url(https://i.pinimg.com/564x/0a/52/17/0a5217b5be9d4dc704f28991c626a48f.jpg);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+}
+
+.btn {
+  margin: 16px;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 16px;
+  border: 4px solid transparent;
+  border-image: url(./media/gold.png) 30;
+
+  transition: 350ms;
+  font-family: MetroBold;
+
+  &:hover {
+    background-color: black;
+    transition: 350ms;
+  }
+}
